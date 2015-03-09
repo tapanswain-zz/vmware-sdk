@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# Purpose :- To get  iqn number of Host from e vCenter & insert into database
+# Purpose :- To get  iqn number of  esx server
 use strict;
 use warnings;
 use POSIX;
@@ -17,7 +17,6 @@ my $host_views = Vim::find_entity_views(view_type => 'HostSystem');
                 my $hostname = $host_view->{'name'};
                 print "$hostname \n" ;
             if (defined($host_views)){
-              if ($host_views ne 'ttsv-esxi-10.juniper.net'){
         my $storage = Vim::get_view(mo_ref => $host_view->configManager->storageSystem, properties => ['storageDeviceInfo']);
 foreach my $dev (@{$storage->storageDeviceInfo->hostBusAdapter})
 
